@@ -8,6 +8,7 @@ fi
 
 mkdir build
 cd build
+export LD_LIBRARY_PATH=$PREFIX/lib:$LD_LIBRARY_PATH
 cmake                                                               \
     -DPYTHON_EXECUTABLE=$PREFIX/bin/python                          \
     -DPYTHON_INCLUDE_DIR=$PREFIX/include/python2.7/                 \
@@ -16,7 +17,7 @@ cmake                                                               \
     -DCMAKE_INSTALL_PREFIX=$PREFIX                                  \
     -DWITH_CUDA=OFF                                                 \
     -DWITH_AVFOUNDATION=OFF                                         \
-    -DWITH_FFMPEG=OFF                                               \
+    -DWITH_FFMPEG=ON                                                \
     -DJPEG_INCLUDE_DIR:PATH=$PREFIX/include                         \
     -DJPEG_LIBRARY:FILEPATH=$PREFIX/lib/libjpeg.so                  \
     -DPNG_PNG_INCLUDE_DIR:PATH=$PREFIX/include                      \
